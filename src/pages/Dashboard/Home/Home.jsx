@@ -1,7 +1,12 @@
+import Dashboard from "./components/Dashboard";
+import { Routes, Route } from "react-router-dom";
+
 const Home = () => {
   return (
-    <div className="h-screen border border-red-500">Home</div>
-  )
-}
+    <Routes>
+      <Route path="/home" element={<Dashboard />} />
+    </Routes>
+  );
+};
 
-export default Home
+export default Home; 
