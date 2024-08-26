@@ -32,8 +32,8 @@ const Sidebar = () => {
   ];
 
   return (
-    <nav className="min-h-full">
-      <div className="flex flex-col h-screen bg-white shadow-sm text-neutral-700 border-r border-gray-300 w-20">
+    <nav className="z-10">
+      <div className="flex flex-col h-full bg-white shadow-sm text-neutral-700 border-r border-gray-300 w-20">
         <div className="">
           {sections.map((section, sectionIndex) => (
             <div
