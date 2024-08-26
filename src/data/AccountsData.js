@@ -499,7 +499,8 @@ export const accountsData = [
     ticker_symbol: "GEL",
     ownership: "Private",
     rating: "cold",
-    description: "Professional landscaping services for commercial and residential clients.",
+    description:
+      "Professional landscaping services for commercial and residential clients.",
     contact_name: "Sophia White",
     contact_imgUrl: "https://www.example.com/images/sophia_white.jpg",
     email: "sophia.white@greenearth.com",
@@ -579,7 +580,8 @@ export const accountsData = [
     ticker_symbol: "NRG",
     ownership: "Private",
     rating: "hot",
-    description: "National chain of retail stores specializing in consumer goods.",
+    description:
+      "National chain of retail stores specializing in consumer goods.",
     contact_name: "William Scott",
     contact_imgUrl: "https://www.example.com/images/william_scott.jpg",
     email: "william.scott@nationalretail.com",
@@ -699,7 +701,8 @@ export const accountsData = [
     ticker_symbol: "FTLAB",
     ownership: "Public",
     rating: "warm",
-    description: "Research and development firm focused on emerging technologies.",
+    description:
+      "Research and development firm focused on emerging technologies.",
     contact_name: "Elizabeth Hernandez",
     contact_imgUrl: "https://www.example.com/images/elizabeth_hernandez.jpg",
     email: "elizabeth.hernandez@futuretech.com",
@@ -739,7 +742,8 @@ export const accountsData = [
     ticker_symbol: "MMG",
     ownership: "Public",
     rating: "warm",
-    description: "Leading media conglomerate with various TV and radio stations.",
+    description:
+      "Leading media conglomerate with various TV and radio stations.",
     contact_name: "David Robinson",
     contact_imgUrl: "https://www.example.com/images/david_robinson.jpg",
     email: "david.robinson@metromedia.com",
@@ -779,7 +783,8 @@ export const accountsData = [
     ticker_symbol: "BH",
     ownership: "Public",
     rating: "cold",
-    description: "Provider of early childhood education and family support services.",
+    description:
+      "Provider of early childhood education and family support services.",
     contact_name: "Jessica Lewis",
     contact_imgUrl: "https://www.example.com/images/jessica_lewis.jpg",
     email: "jessica.lewis@brighthorizons.com",
@@ -803,15 +808,29 @@ export const accountsData = [
 ];
 
 export const accountColumnDefs = [
-  { field: "account_name", headerName: "Account Name", headerCheckboxSelection: true, checkboxSelection: true },
+  {
+    field: "account_name",
+    headerName: "Account Name",
+    headerCheckboxSelection: true,
+    checkboxSelection: true,
+  },
   { field: "account_number", headerName: "Account Number" },
-  { field: "website", headerName: "Website", cellRenderer: params => `<a href="${params.value}" target="_blank">${params.value}</a>` },
+  {
+    field: "website",
+    headerName: "Website",
+    cellRenderer: (params) =>
+      `<a href="${params.value}" target="_blank">${params.value}</a>`,
+  },
   { field: "account_site", headerName: "Account Site" },
   { field: "account_owner", headerName: "Account Owner" },
   { field: "parent_account", headerName: "Parent Account" },
   { field: "account_type", headerName: "Account Type" },
   { field: "industry", headerName: "Industry" },
-  { field: "annual_revenue", headerName: "Annual Revenue", valueFormatter: params => `$${params.value.toLocaleString()}` },
+  {
+    field: "annual_revenue",
+    headerName: "Annual Revenue",
+    valueFormatter: (params) => `$${params.value.toLocaleString()}`,
+  },
   { field: "employees", headerName: "Employees" },
   { field: "created_by", headerName: "Created By" },
   { field: "modified_by", headerName: "Modified By" },
@@ -820,31 +839,37 @@ export const accountColumnDefs = [
   { field: "rating", headerName: "Rating" },
   { field: "description", headerName: "Description" },
   { field: "contact_name", headerName: "Contact Name" },
-  { field: "contact_imgUrl", headerName: "Contact Image", cellRenderer: params => `<img src="${params.value}" alt="Contact" style="width: 50px; height: 50px;" />` },
+  {
+    field: "contact_imgUrl",
+    headerName: "Contact Image",
+    cellRenderer: (params) =>
+      `<img src="${params.value}" alt="Contact" style="width: 50px; height: 50px;" />`,
+  },
   { field: "email", headerName: "Email" },
   { field: "phone", headerName: "Phone" },
   { field: "mobile", headerName: "Mobile" },
   { field: "department", headerName: "Department" },
   { field: "title", headerName: "Title" },
   // For nested fields
-  { 
-    headerName: "Billing Address",
-    children: [
-      { field: "address_information.billing_street", headerName: "Street" },
-      { field: "address_information.billing_city", headerName: "City" },
-      { field: "address_information.billing_state", headerName: "State" },
-      { field: "address_information.billing_code", headerName: "Code" },
-      { field: "address_information.billing_country", headerName: "Country" },
-    ]
+
+  { field: "address_information.billing_street", headerName: "Billing Street" },
+  { field: "address_information.billing_city", headerName: "Billing City" },
+  { field: "address_information.billing_state", headerName: "Billing State" },
+  { field: "address_information.billing_code", headerName: "Billing Code" },
+  {
+    field: "address_information.billing_country",
+    headerName: "Billing Country",
   },
-  { 
-    headerName: "Shipping Address",
-    children: [
-      { field: "address_information.shipping_street", headerName: "Street" },
-      { field: "address_information.shipping_city", headerName: "City" },
-      { field: "address_information.shipping_state", headerName: "State" },
-      { field: "address_information.shipping_code", headerName: "Code" },
-      { field: "address_information.shipping_country", headerName: "Country" },
-    ]
-  }
+
+  {
+    field: "address_information.shipping_street",
+    headerName: "Shipping Street",
+  },
+  { field: "address_information.shipping_city", headerName: "Shipping City" },
+  { field: "address_information.shipping_state", headerName: "Shipping State" },
+  { field: "address_information.shipping_code", headerName: "Shipping Code" },
+  {
+    field: "address_information.shipping_country",
+    headerName: "Shipping Country",
+  },
 ];
