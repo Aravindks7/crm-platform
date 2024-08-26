@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Accounts from "./pages/Dashboard/Accounts/Accounts";
 import Home from "./pages/Dashboard/Home/Home";
+import Leads from "./pages/Dashboard/Leads/Leads";
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
               <Routes>
                 <Route path="/*" element={<Home />} />
                 <Route path="/accounts/*" element={<Accounts />} />
+                <Route path="/leads/*" element={<Leads />} />
               </Routes>
             </div>
           </div>
