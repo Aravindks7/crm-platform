@@ -4,16 +4,23 @@ import "ag-grid-community/styles/ag-theme-quartz.css";
 import { useMemo, useState } from "react";
 import { leadsData, leadColumnDefs } from "../../../../data/LeadsData";
 import LeadsActionBar from "./LeadsActionBar";
+import { useNavigate } from "react-router-dom";
 
 const LeadsTable = () => {
   const [rowData, setRowData] = useState(leadsData);
   const [colDefs, setColDefs] = useState(leadColumnDefs);
+  const navigate = useNavigate();
 
   const defaultColDef = useMemo(() => {
     return {
       filter: true,
     };
   }, []);
+
+  const handleRowClick = (e) => {
+    const leadId = e.data.id;
+    navigate(`leads/${leadId}`);
+  }
 
   return (
     <div>
@@ -30,6 +37,7 @@ const LeadsTable = () => {
             rowSelection={"multiple"}
             columnDefs={colDefs}
             defaultColDef={defaultColDef}
+            onRowClicked={handleRowClick}
           />
         </div>
       </div>

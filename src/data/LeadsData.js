@@ -1,6 +1,6 @@
 export const leadsData = [
   {
-      _id: 1,
+      id: 1,
       key: "1",
       leadImage: "http://example.com/image1.jpg",
       leadOwner:"Sabu Joh Bosco",
@@ -27,7 +27,7 @@ export const leadsData = [
       preferredContactMethod: "60d5ec49c2f2e4a1f8d41239"
   },
   {
-      _id: 2,
+      id: 2,
       key: "2",
       leadImage: "http://example.com/image2.jpg",
       leadOwner:"Sabu Joh Bosco",
@@ -54,7 +54,7 @@ export const leadsData = [
       preferredContactMethod: "60d5ec49c2f2e4a1f8d41239"
   },
   {
-      _id: 3,
+      id: 3,
       key: "3",
       leadImage: "http://example.com/image3.jpg",
       leadOwner:"Sabu Joh Bosco",
@@ -81,7 +81,7 @@ export const leadsData = [
       preferredContactMethod: "60d5ec49c2f2e4a1f8d41239"
   },
   {
-      _id: 4,
+      id: 4,
       key: "4",
       leadImage: "http://example.com/image4.jpg",
       leadOwner:"Sabu Joh Bosco",
@@ -108,7 +108,7 @@ export const leadsData = [
       preferredContactMethod: "60d5ec49c2f2e4a1f8d41239"
   },
   {
-      _id: 5,
+      id: 5,
       key: "5",
       leadImage: "http://example.com/image5.jpg",
       leadOwner:"Sabu Joh Bosco",
@@ -135,7 +135,7 @@ export const leadsData = [
       preferredContactMethod: "60d5ec49c2f2e4a1f8d41239"
   },
   {
-      _id: 6,
+      id: 6,
       key: "6",
       leadImage: "http://example.com/image6.jpg",
       leadOwner:"Sabu Joh Bosco",
@@ -162,7 +162,7 @@ export const leadsData = [
       preferredContactMethod: "60d5ec49c2f2e4a1f8d41239"
   },
   {
-      _id: 7,
+      id: 7,
       key: "7",
       leadImage: "http://example.com/image7.jpg",
       leadOwner:"Sabu Joh Bosco",
@@ -189,7 +189,7 @@ export const leadsData = [
       preferredContactMethod: "60d5ec49c2f2e4a1f8d41239"
   },
   {
-      _id: 8,
+      id: 8,
       key: "8",
       leadImage: "http://example.com/image8.jpg",
       leadOwner:"Sabu Joh Bosco",
@@ -216,7 +216,7 @@ export const leadsData = [
       preferredContactMethod: "60d5ec49c2f2e4a1f8d41239"
   },
   {
-      _id: 9,
+      id: 9,
       key: "9",
       leadImage: "http://example.com/image9.jpg",
       leadOwner:"Sabu Joh Bosco",
@@ -243,7 +243,7 @@ export const leadsData = [
       preferredContactMethod: "60d5ec49c2f2e4a1f8d41239"
   },
   {
-      _id: 10,
+      id: 10,
       key: "10",
       leadImage: "http://example.com/image10.jpg",
       leadOwner:"Sabu Joh Bosco",
@@ -270,7 +270,7 @@ export const leadsData = [
       preferredContactMethod: "60d5ec49c2f2e4a1f8d41239"
   },
   {
-      _id: 11,
+      id: 11,
       key: "11",
       leadImage: "http://example.com/image11.jpg",
       leadOwner:"Sabu Joh Bosco",
@@ -297,7 +297,7 @@ export const leadsData = [
       preferredContactMethod: "60d5ec49c2f2e4a1f8d41239"
   },
   {
-      _id: 12,
+      id: 12,
       key: "12",
       leadImage: "http://example.com/image12.jpg",
       leadOwner:"Sabu Joh Bosco",
@@ -324,7 +324,7 @@ export const leadsData = [
       preferredContactMethod: "60d5ec49c2f2e4a1f8d41239"
   },
   {
-      _id: 13,
+      id: 13,
       key: "13",
       leadImage: "http://example.com/image13.jpg",
       leadOwner:"Sabu Joh Bosco",
@@ -351,7 +351,7 @@ export const leadsData = [
       preferredContactMethod: "60d5ec49c2f2e4a1f8d41239"
   },
   {
-      _id: 14,
+      id: 14,
       key: "14",
       leadImage: "http://example.com/image14.jpg",
       leadOwner:"Sabu Joh Bosco",
@@ -378,7 +378,7 @@ export const leadsData = [
       preferredContactMethod: "60d5ec49c2f2e4a1f8d41239"
   },
   {
-      _id: 15,
+      id: 15,
       key: "15",
       leadImage: "http://example.com/image15.jpg",
       leadOwner:"Sabu Joh Bosco",
@@ -405,7 +405,7 @@ export const leadsData = [
       preferredContactMethod: "60d5ec49c2f2e4a1f8d41239"
   },
   {
-      _id: 16,
+      id: 16,
       key: "16",
       leadImage: "http://example.com/image16.jpg",
       leadOwner:"Sabu Joh Bosco",
@@ -432,7 +432,7 @@ export const leadsData = [
       preferredContactMethod: "60d5ec49c2f2e4a1f8d41239"
   },
   {
-      _id: 17,
+      id: 17,
       key: "17",
       leadImage: "http://example.com/image17.jpg",
       leadOwner:"Sabu Joh Bosco",
@@ -459,7 +459,7 @@ export const leadsData = [
       preferredContactMethod: "60d5ec49c2f2e4a1f8d41239"
   },
   {
-      _id: 18,
+      id: 18,
       key: "18",
       leadImage: "http://example.com/image18.jpg",
       leadOwner:"Sabu Joh Bosco",
@@ -486,7 +486,7 @@ export const leadsData = [
       preferredContactMethod: "60d5ec49c2f2e4a1f8d41239"
   },
   {
-      _id: 19,
+      id: 19,
       key: "19",
       leadImage: "http://example.com/image19.jpg",
       leadOwner:"Sabu Joh Bosco",
@@ -513,7 +513,7 @@ export const leadsData = [
       preferredContactMethod: "60d5ec49c2f2e4a1f8d41239"
   },
   {
-      _id: 20,
+      id: 20,
       key: "20",
       leadImage: "http://example.com/image20.jpg",
       leadOwner:"Sabu Joh Bosco",
