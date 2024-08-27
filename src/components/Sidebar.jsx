@@ -15,7 +15,7 @@ const Sidebar = () => {
   const sections = [
     {
       items: [
-        { name: "Home", icon: <IoHomeOutline size={20} />, path: "/" },
+        { name: "Home", icon: <IoHomeOutline size={20} />, path: "/home" },
         { name: "Leads", icon: <IoPersonOutline size={20} />, path: "/leads" },
         { name: "Contacts", icon: <IoPersonOutline size={20} />, path: "/contacts" },
         { name: "Accounts", icon: <IoBriefcaseOutline size={20} />, path: "/accounts" },
