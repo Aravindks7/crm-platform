@@ -4,8 +4,8 @@ import { accountsData } from "../../../../data/AccountsData";
 import { FiPhone } from "react-icons/fi";
 import { GiRotaryPhone } from "react-icons/gi";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
-import AccountsHeader from "./AccountsHeader";
-import AccountsSidebar from "./AccountsSidebar";
+import ContactsHeader from "./ContactsHeader";
+import ContactsSidebar from "./ContactsSidebar";
 
 const AccountOverview = () => {
   const [activeTab, setActiveTab] = useState("Overview");
@@ -20,9 +20,9 @@ const AccountOverview = () => {
 
   return (
     <div className="flex flex-col h-screen">
-      <AccountsHeader />
+      <ContactsHeader />
       <div className="flex flex-1">
-        <AccountsSidebar />
+        <ContactsSidebar />
         <main className="flex-1 p-4 overflow-y-auto">
           <div className="flex items-center justify-between mb-4">
             {/* Custom Switch */}
