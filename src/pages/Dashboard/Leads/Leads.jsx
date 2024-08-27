@@ -1,6 +1,11 @@
+import { Routes, Route } from "react-router-dom";
+import LeadsTable from "./components/LeadsTable.jsx";
+
 const Leads = () => {
   return (
-    <div>Leads</div>
+    <Routes>
+      <Route path="/" element={<LeadsTable />} />
+    </Routes>
   )
 }
 
