@@ -6,7 +6,7 @@ const Accounts = () => {
   return (
     <Routes>
       <Route path="/" element={<ContactssTable />} />
-      <Route path="accounts/:id" element={<ContactsOverview />} />
+      <Route path="contacts/:id" element={<ContactsOverview />} />
     </Routes>
   );
 };

@@ -1,20 +1,22 @@
 const ContactsSidebar = () => {
   const relatedList = [
     { name: "Notes", count: 0, link: "#notes" },
+    { name: "Cadences", count: 0, link: "#cadences" },
     { name: "Attachments", count: 0, link: "#attachments" },
     { name: "Deals", count: 1, link: "#deals" },
-    { name: "Contacts", count: 1, link: "#contacts" },
-    { name: "Emails", count: 0, link: "#emails" },
     { name: "Open Activities", count: 2, link: "#open-activities" },
     { name: "Closed Activities", count: 0, link: "#closed-activities" },
+    { name: "Invited Meetings", count: 1, link: "#invited-meetings" },
     { name: "Products", count: 0, link: "#products" },
+    { name: "Cases", count: 0, link: "#cases" },
     { name: "Quotes", count: 0, link: "#quotes" },
     { name: "Sales Orders", count: 0, link: "#sales-orders" },
+    { name: "Purchase Orders", count: 0, link: "#purchase-orders" },
+    { name: "Emails", count: 0, link: "#emails" },
     { name: "Invoices", count: 0, link: "#invoices" },
-    { name: "Member Accounts", count: 0, link: "#member-accounts" },
-    { name: "Cases", count: 0, link: "#cases" },
+    { name: "Campaigns", count: 0, link: "#campaigns" },
     { name: "Social", count: 0, link: "#social" },
-    { name: "Zoho Projects", count: 0, link: "#zoho-projects" },
+    { name: "Reporting Contacts", count: 0, link: "#reporting-contacts" },
   ];
 
   return (

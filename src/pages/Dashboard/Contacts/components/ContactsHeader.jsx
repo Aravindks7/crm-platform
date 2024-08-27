@@ -36,10 +36,9 @@ const ContactsHeader = () => {
           />
           <div className="flex flex-col space-y-1">
             <div className="flex items-center gap-2">
-              <h1 className="text-xl font-bold">{item.account_name} -</h1>
-              <a href={item.website} className="text-blue-500 text-sm">
-                {item.website}
-              </a>
+              <h1 className="text-xl font-bold">{item.contact_name} -</h1>
+              <h1 className="">{item.account_name}</h1>
+
             </div>
             <div className="flex items-center text-sm text-medium text-gray-500">
               <IoMdPricetag size={20} color="gray"/>

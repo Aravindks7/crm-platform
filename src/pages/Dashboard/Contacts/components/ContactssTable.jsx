@@ -18,8 +18,8 @@ const ContactsTable = () => {
   }, []);
 
   const handleRowClick = (event) => {
-    const accountId = event.data.id; 
-    navigate(`contacts/${accountId}`);
+    const contactId = event.data.id; 
+    navigate(`contacts/${contactId}`);
   };
 
   return (
