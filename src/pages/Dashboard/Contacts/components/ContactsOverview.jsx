@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { accountsData } from "../../../../data/AccountsData";
+import { contactsData } from "../../../../data/ContatcsData";
 import { FiPhone } from "react-icons/fi";
-import { GiRotaryPhone } from "react-icons/gi";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
-import AccountsHeader from "./AccountsHeader";
-import AccountsSidebar from "./AccountsSidebar";
+import ContactsHeader from "./ContactsHeader";
+import ContactsSidebar from "./ContactsSidebar";
 
 const AccountOverview = () => {
   const [activeTab, setActiveTab] = useState("Overview");
@@ -16,13 +15,13 @@ const AccountOverview = () => {
     setIsDetailsVisible(!isDetailsVisible);
   };
 
-  const item = accountsData.find((acc) => acc.id === parseInt(id));
+  const item = contactsData.find((acc) => acc.id === parseInt(id));
 
   return (
     <div className="flex flex-col h-screen">
-      <AccountsHeader />
+      <ContactsHeader />
       <div className="flex flex-1">
-        <AccountsSidebar />
+        <ContactsSidebar />
         <main className="flex-1 p-4 overflow-y-auto">
           <div className="flex items-center justify-between mb-4">
             {/* Custom Switch */}
@@ -62,10 +61,8 @@ const AccountOverview = () => {
               <section className="">
                 <div className="bg-white border border-gray-200 px-6 py-4 rounded-lg shadow-sm mb-4">
                   {[
-                    { label: "Account Owner", value: item.account_owner },
-                    { label: "Industry", value: item.industry },
-                    { label: "Employees", value: item.employees },
-                    { label: "Annual Revenue", value: item.annual_revenue },
+                    { label: "Contact Owner", value: item.contact_owner },
+                    { label: "Email", value: item.industry },
                     {
                       label: "Phone",
                       value: (
@@ -77,6 +74,22 @@ const AccountOverview = () => {
                           {item.phone}
                         </span>
                       ),
+                    },
+                    {
+                      label: "Mobile",
+                      value: (
+                        <span className="flex items-center gap-2">
+                          <FiPhone
+                            size={24}
+                            className="text-green-500 bg-green-100 p-1 rounded-md"
+                          />
+                          {item.phone}
+                        </span>
+                      ),
+                    },
+                    {
+                      label: "Department",
+                      value: item.department,
                     },
                   ].map((item, index) => (
                     <div key={index} className="flex items-center my-4">
@@ -94,7 +107,7 @@ const AccountOverview = () => {
               {/* Deals, Next Action, and Contacts Section */}
 
               <section className="flex mb-4 bg-white border border-gray-200 px-8 py-6 rounded-lg shadow-sm">
-                <div className="w-1/3">
+                <div className="w-1/2">
                   <h3 className="font-bold mb-4 text-lg">Deals</h3>
                   <div className="space-y-2">
                     <div className="flex items-center">
@@ -116,7 +129,7 @@ const AccountOverview = () => {
 
                 <div className="border-l border-gray-200 mx-6" />
 
-                <div className="w-1/3">
+                <div className="w-1/2">
                   <h3 className="font-bold text-lg mb-4">Next Action</h3>
                   {[
                     {
@@ -138,38 +151,6 @@ const AccountOverview = () => {
                     </div>
                   ))}
                 </div>
-
-                <div className="border-l border-gray-200 mx-6" />
-
-                <div className="w-1/3">
-                  <h3 className="font-bold text-lg mb-4">Contacts</h3>
-                  <div className="flex">
-                    <img
-                      src="/images/profile.png"
-                      alt="Rick Sanchez"
-                      className="rounded-full w-16 h-16 mr-2"
-                    />
-                    <div className="grid gap-2 text-primary text-sm">
-                      <h4 className="font-semibold">{item.contact_name}</h4>
-
-                      <h3 className="">{item.email}</h3>
-                      <span className="flex items-center gap-2">
-                        <GiRotaryPhone
-                          size={24}
-                          className="text-violet-500 bg-violet-100 p-1 rounded-md"
-                        />
-                        {item.phone}
-                      </span>
-                      <span className="flex items-center gap-2">
-                        <FiPhone
-                          size={24}
-                          className="text-green-500 bg-green-100 p-1 rounded-md"
-                        />
-                        {item.mobile}
-                      </span>
-                    </div>
-                  </div>
-                </div>
               </section>
 
               {/* Hide Details Section */}
@@ -179,7 +160,6 @@ const AccountOverview = () => {
                   {/* Toggle Details button */}
                   <div className="mb-4">
                     <button
-                      type="link"
                       onClick={toggleDetails}
                       className="ml-4 flex items-center gap-x-1 text-black font-bold hover:!text-secondary"
                     >
@@ -202,43 +182,59 @@ const AccountOverview = () => {
                         {/* Full Account Information Section */}
                         <div className="px-6 py-2 rounded-lg  mb-8">
                           <h2 className="text-lg font-semibold mb-6 ">
-                            Account Information
+                            Contact Information
                           </h2>
                           <div className="grid grid-cols-2 gap-8">
                             {/* Left Column */}
                             <div>
                               {[
                                 {
-                                  label: "Account Owner",
-                                  value: item.account_owner,
+                                  label: "Contact Owner",
+                                  value: item.contact_owner,
                                 },
                                 {
                                   label: "Account Name",
                                   value: item.account_name,
                                 },
                                 {
-                                  label: "Account Site",
+                                  label: "Email",
                                   value: item.account_site,
                                 },
                                 {
-                                  label: "Parent Account",
-                                  value: item.parent_account,
+                                  label: "Phone",
+                                  value: (
+                                    <span className="flex items-center gap-2">
+                                      <FiPhone
+                                        size={24}
+                                        className="text-green-500 bg-green-100 p-1 rounded-md"
+                                      />
+                                      {item.phone}
+                                    </span>
+                                  ),
                                 },
                                 {
-                                  label: "Account Number",
-                                  value: item.account_number,
+                                  label: "Other Phone",
+                                  value: "—",
                                 },
                                 {
-                                  label: "Account Type",
-                                  value: item.account_type,
+                                  label: "Mobile",
+                                  value: (
+                                    <span className="flex items-center gap-2">
+                                      <FiPhone
+                                        size={24}
+                                        className="text-green-500 bg-green-100 p-1 rounded-md"
+                                      />
+                                      {item.phone}
+                                    </span>
+                                  ),
                                 },
-                                { label: "Industry", value: item.industry },
+                                { label: "Assistant", value: "—" },
                                 {
-                                  label: "Annual Revenue",
+                                  label: "Created By",
                                   value: item.annual_revenue,
                                 },
                                 {
-                                  label: "Created By",
+                                  label: "Modified By",
                                   value: item.created_by,
                                 },
                               ].map((item, index) => (
@@ -259,40 +255,45 @@ const AccountOverview = () => {
                             {/* Right Column */}
                             <div>
                               {[
-                                { label: "Rating", value: item.rating },
+                                { label: "Lead Source", value: item.rating },
                                 {
-                                  label: "Phone",
-                                  value: (
-                                    <span className="flex items-center gap-2">
-                                      <FiPhone
-                                        size={24}
-                                        className="text-green-500 bg-green-100 p-1 rounded-md"
-                                      />
-                                      {item.phone}
-                                    </span>
-                                  ),
+                                  label: "Contact Name",
+                                  value: item.contact_name,
                                 },
-                                { label: "Fax", value: "—" },
+                                { label: "Vendor Name", value: "—" },
                                 {
-                                  label: "Website",
-                                  value: (
-                                    <a
-                                      href={item.website}
-                                      className="text-blue-500"
-                                    >
-                                      {item.website}
-                                    </a>
-                                  ),
+                                  label: "Title",
+                                  value: item.title,
                                 },
                                 {
-                                  label: "Ticker Symbol",
+                                  label: "Department",
                                   value: item.ticker_symbol,
                                 },
-                                { label: "Ownership", value: item.ownership },
-                                { label: "Employees", value: item.employees },
-                                { label: "SIC code", value: "—" },
+                                { label: "Home Phone", value: item.ownership },
+                                { label: "Fax", value: item.employees },
+                                { label: "Date of Birth", value: "—" },
                                 {
-                                  label: "Modified By",
+                                  label: "Asst Phone",
+                                  value: item.modified_by,
+                                },
+                                {
+                                  label: "Email Opt Out",
+                                  value: item.modified_by,
+                                },
+                                {
+                                  label: "Skype ID",
+                                  value: item.modified_by,
+                                },
+                                {
+                                  label: "Secondary Email",
+                                  value: item.modified_by,
+                                },
+                                {
+                                  label: "Reporting To",
+                                  value: item.modified_by,
+                                },
+                                {
+                                  label: "Twitter",
                                   value: item.modified_by,
                                 },
                               ].map((item, index) => (
@@ -321,7 +322,7 @@ const AccountOverview = () => {
                               Address Information
                             </h2>
                             <div>
-                              <button className="py-2 px-4 rounded-md">
+                              <button className="bg-white border border-grey-300 hover:border-blue-300 py-2 px-4 rounded-md transition-colors duration-150 active:bg-gray-50">
                                 Locate Map
                               </button>
                             </div>
@@ -331,26 +332,24 @@ const AccountOverview = () => {
                             <div>
                               {[
                                 {
-                                  label: "Billing Street",
-                                  value:
-                                    item.address_information.billing_street,
+                                  label: "Mailing Street",
+                                  value: "—",
                                 },
                                 {
-                                  label: "Billing City",
-                                  value: item.address_information.billing_city,
+                                  label: "Mailing City",
+                                  value: "—",
                                 },
                                 {
-                                  label: "Billing State",
-                                  value: item.address_information.billing_state,
+                                  label: "Mailing State",
+                                  value: "—",
                                 },
                                 {
-                                  label: "Billing Code",
-                                  value: item.address_information.billing_code,
+                                  label: "Mailing ZIp",
+                                  value: "—",
                                 },
                                 {
-                                  label: "Billing Country",
-                                  value:
-                                    item.address_information.billing_country,
+                                  label: "Mailing Country",
+                                  value: "—",
                                 },
                               ].map((item, index) => (
                                 <div
@@ -371,27 +370,24 @@ const AccountOverview = () => {
                             <div>
                               {[
                                 {
-                                  label: "Shipping Street",
-                                  value:
-                                    item.address_information.shipping_street,
+                                  label: "Other Street",
+                                  value: "—",
                                 },
                                 {
-                                  label: "Shipping City",
-                                  value: item.address_information.shipping_city,
+                                  label: "Other City",
+                                  value: "—",
                                 },
                                 {
-                                  label: "Shipping State",
-                                  value:
-                                    item.address_information.shipping_state,
+                                  label: "Other State",
+                                  value: "—",
                                 },
                                 {
-                                  label: "Shipping Code",
-                                  value: item.address_information.shipping_code,
+                                  label: "Other Zip",
+                                  value: "—",
                                 },
                                 {
-                                  label: "Shipping Country",
-                                  value:
-                                    item.address_information.shipping_country,
+                                  label: "Other Country",
+                                  value: "—",
                                 },
                               ].map((item, index) => (
                                 <div
@@ -431,6 +427,86 @@ const AccountOverview = () => {
 
                         <div className="border-t border-grey-200 my-6" />
 
+                        {/* Visit Summary Section */}
+                        <div className=" px-6 py-2 rounded-lg  mb-8">
+                          <div className="flex items-center justify-between">
+                            <h2 className="text-lg font-semibold mb-6">
+                              Visit Summary
+                            </h2>
+                          </div>
+                          <div className="grid grid-cols-2 gap-8">
+                            {/* Left Column */}
+                            <div>
+                              {[
+                                {
+                                  label: "Most Recent Visit",
+                                  value: "—",
+                                },
+                                {
+                                  label: "Average Time Spent",
+                                  value: "—",
+                                },
+                                {
+                                  label: "Referrer",
+                                  value: "—",
+                                },
+                                {
+                                  label: "First Visit",
+                                  value: "—",
+                                },
+                              ].map((item, index) => (
+                                <div
+                                  key={index}
+                                  className="flex items-center my-4"
+                                >
+                                  <p className="text-secondary text-right mr-12 min-w-[160px] text-sm">
+                                    {item.label}
+                                  </p>
+                                  <p className="text-primary font-medium text-sm">
+                                    {item.value}
+                                  </p>
+                                </div>
+                              ))}
+                            </div>
+
+                            {/* Right Column */}
+                            <div>
+                              {[
+                                {
+                                  label: "First Page Visited",
+                                  value: "—",
+                                },
+                                {
+                                  label: "Number of Chats",
+                                  value: "—",
+                                },
+                                {
+                                  label: "Visit Score",
+                                  value: "—",
+                                },
+                                {
+                                  label: "Days Visited",
+                                  value: "—",
+                                },
+                              ].map((item, index) => (
+                                <div
+                                  key={index}
+                                  className="flex items-center my-4"
+                                >
+                                  <p className="text-secondary text-right mr-12 min-w-[160px] text-sm">
+                                    {item.label}
+                                  </p>
+                                  <p className="text-primary font-medium text-sm">
+                                    {item.value}
+                                  </p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="border-t border-grey-200 my-6" />
+
                         {/* Notes Section */}
                         <div className="px-6 py-2 rounded-lg ">
                           <div className="flex items-center justify-between mb-4">
@@ -450,14 +526,14 @@ const AccountOverview = () => {
                         {/* Partially visible Account Information Section */}
                         <div className="px-6 py-2 rounded-lg  mb-8">
                           <h2 className="text-lg font-semibold mb-6 ">
-                            Account Information
+                            Contact Information
                           </h2>
                           <div className="grid grid-cols-2 gap-8">
                             {/* Show only the first few items */}
                             <div>
                               <div className="flex items-center my-4">
                                 <p className="text-secondary text-right mr-12 min-w-[160px] text-sm">
-                                  Account Owner
+                                  Contact Owner
                                 </p>
                                 <p className="text-primary font-medium text-sm">
                                   {item.account_owner}
@@ -476,7 +552,7 @@ const AccountOverview = () => {
                             <div>
                               <div className="flex items-center my-4">
                                 <p className="text-secondary text-right mr-12 min-w-[160px] text-sm">
-                                  Rating
+                                  Lead Source
                                 </p>
                                 <p className="text-primary font-medium text-sm">
                                   {item.rating}
@@ -484,7 +560,7 @@ const AccountOverview = () => {
                               </div>
                               <div className="flex items-center my-4">
                                 <p className="text-secondary text-right mr-12 min-w-[160px] text-sm">
-                                  Phone
+                                  Contact Name
                                 </p>
                                 <p className="text-primary font-medium text-sm">
                                   <span className="flex items-center gap-2">

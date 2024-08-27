@@ -15,7 +15,7 @@ const Sidebar = () => {
   const sections = [
     {
       items: [
-        { name: "Home", icon: <IoHomeOutline size={20} />, path: "/home" },
+        { name: "Home", icon: <IoHomeOutline size={20} />, path: "/" },
         { name: "Leads", icon: <IoPersonOutline size={20} />, path: "/leads" },
         { name: "Contacts", icon: <IoPersonOutline size={20} />, path: "/contacts" },
         { name: "Accounts", icon: <IoBriefcaseOutline size={20} />, path: "/accounts" },
@@ -33,7 +33,7 @@ const Sidebar = () => {
 
   return (
     <nav className="z-10">
-      <div className="flex flex-col h-full bg-white shadow-sm text-neutral-700 border-r border-gray-300 w-20">
+      <div className="flex flex-col h-full bg-white shadow-sm text-neutral-700 border-r border-gray-300 w-16">
         <div className="">
           {sections.map((section, sectionIndex) => (
             <div
