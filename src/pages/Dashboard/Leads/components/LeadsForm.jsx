@@ -3,6 +3,7 @@ import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { schema } from "./leadSchema";
 import PropTypes from "prop-types";
+import ClapSpinner from "../../../../components/ui/ClapSpinner";
 
 const formFields = [
   { name: "firstName", label: "First Name", type: "text" },
@@ -70,18 +71,18 @@ const LeadsForm = ({ closeModal }) => {
               <button
                 type="submit"
                 name="save"
-                className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 disabled:opacity-50"
+                className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 disabled"
                 disabled={isSaving || isSavingNew}
               >
-                {isSaving ? <span className="spinner" /> : "Save"}
+                {isSaving ? <ClapSpinner /> : "Save"}
               </button>
               <button
                 type="submit"
                 name="saveAndNew"
-                className="w-full bg-blue-500 text-white py-2 px-6 rounded hover:bg-blue-600 disabled:opacity-50 min-w-[150px]"
+                className="w-full bg-blue-500 text-white py-2 px-6 rounded hover:bg-blue-600 min-w-[150px]"
                 disabled={isSaving || isSavingNew}
               >
-                {isSavingNew ? <span className="spinner" /> : "Save and New"}
+                {isSavingNew ? <ClapSpinner /> : "Save and New"}
               </button>
               <button
                 type="button"
