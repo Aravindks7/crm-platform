@@ -31,7 +31,7 @@ const WelcomeSection = () => {
         {/* Welcome Text Section */}
         <div className="flex flex-col col-span-1">
           <h1 className="text-2xl font-semibold mb-2">
-            Welcome, Sabu John Bosco
+            Welcome Guest User!
           </h1>
           <p className="text-gray-600 mb-6">
             Check out these suggestions to kick off your day.

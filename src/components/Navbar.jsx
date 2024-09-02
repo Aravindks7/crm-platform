@@ -6,11 +6,12 @@ import {
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { GoPlus } from "react-icons/go";
 import PropTypes from "prop-types"
+import { Link } from "react-router-dom";
 
 const Navbar = ({ logoSrc, logoName }) => {
   return (
     <div className="flex justify-between items-center px-4 py-2 bg-white border-b border-gray-300 shadow-sm">
-      <div className="flex items-center gap-x-3 ">
+      <Link to="/home" className="flex items-center gap-x-3 ">
         <img
           src={logoSrc}
           alt="Logo"
@@ -19,7 +20,7 @@ const Navbar = ({ logoSrc, logoName }) => {
           className="cursor-pointer"
         />
         <h1 className="text-logo text-lg font-bold">{logoName}</h1>
-      </div>
+      </Link>
       <div className="relative w-full max-w-md">
         <span className="absolute inset-y-0 left-0 flex items-center pl-3">
           <IoSearchOutline size={20} />
